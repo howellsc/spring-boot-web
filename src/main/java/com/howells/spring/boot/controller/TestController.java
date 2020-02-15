@@ -12,7 +12,7 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/test/name")
     public String getName() {
-        return "Chris";
+        return "Chris-Howells";
     }
 
 }
