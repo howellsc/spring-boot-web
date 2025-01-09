@@ -1,7 +1,7 @@
 steps:
   - id: 'Stage app using mvn appengine plugin'
     name: 'gcr.io/cloud-builders/mvn'
-    args: [ '--define', '--settings', 'settings.xml', 'package']
+    args: [ 'install']
 
 options:
   logging: "CLOUD_LOGGING_ONLY"
