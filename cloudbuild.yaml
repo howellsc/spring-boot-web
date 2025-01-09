@@ -1,6 +1,5 @@
 steps:
   - id: 'Check Java Version'
-    name: 'gcr.io/cloud-builders/mvn'  
     args:
       - 'bash'
       - '-c'
