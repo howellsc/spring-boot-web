@@ -1,13 +1,10 @@
 steps:
-  - id: 'Check Java Version'
+  - name: 'gcr.io/cloud-builders/mvn'
+    id: 'Check Java Version'
     args:
       - 'bash'
       - '-c'
       - 'java -version'
-
-  # - id: 'Stage app using mvn appengine plugin'
-  #   name: 'gcr.io/cloud-builders/mvn'
-  #   args: [ 'install']
 
 options:
   logging: "CLOUD_LOGGING_ONLY"
