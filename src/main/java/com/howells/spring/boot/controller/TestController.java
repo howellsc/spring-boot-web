@@ -1,16 +1,20 @@
 package com.howells.spring.boot.controller;
 
-import com.howells.spring.boot.service.UserService;
 import com.howells.spring.boot.entity.Cars;
 import com.howells.spring.boot.entity.Person;
 import com.howells.spring.boot.entity.Response;
+import com.howells.spring.boot.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +32,7 @@ public class TestController {
     @Autowired
     private UserService userService;
 
-    @Operation(description = "Get a name" )
+    @Operation(description = "Get a name")
     @GetMapping(path = "/name/{car}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, String> getName(@RequestHeader(name = "name") @Parameter(required = true, example = "Paul") String name, @Parameter Cars car) {
         Map<String, String> result = new HashMap<>();
@@ -37,7 +41,7 @@ public class TestController {
     }
 
 
-    @Operation(description = "Get age" )
+    @Operation(description = "Get age")
     @GetMapping(path = "/age", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response getAge() {
         Response response = new Response(21);
