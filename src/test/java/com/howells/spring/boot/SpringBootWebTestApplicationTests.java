@@ -8,6 +8,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Objects;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -26,7 +28,7 @@ class SpringBootWebTestApplicationTests {
     @Test
     void Endpoint() {
         ResponseEntity<Response> response = testRestTemplate.getForEntity("http://localhost:" + port + "/howells/test/age", Response.class);
-        assertThat(response.getBody().getAge()).isEqualTo(21);
+        assertThat(Objects.requireNonNull(response.getBody()).getAge()).isEqualTo(21);
     }
 
 }

@@ -9,11 +9,11 @@ import lombok.extern.java.Log;
  * Created by chrish on 11/10/2021.
  */
 
+@Getter
 @AllArgsConstructor
 @Log
 @EqualsAndHashCode
 public class Response {
 
-    @Getter
     private int age;
 }
