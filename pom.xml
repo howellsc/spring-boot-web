@@ -138,6 +138,17 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <to>
+                        <image>europe-west2-docker.pkg.dev/rugged-courier-444014-n0/howells-docker-repository/spring-boot-web</image>
+                    </to>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
