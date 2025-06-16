@@ -1,11 +1,22 @@
 steps:
   - id: 'Build app'
     name: 'gcr.io/cloud-builders/mvn'
-    args: [ 'install']
+    args: [ 'install', 'jib:build']
 
   - id: 'Run Checkstyle'
     name: 'gcr.io/cloud-builders/mvn'
     args: [ 'checkstyle:check']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      [
+        'run', 'deploy', 'spring-boot-web',
+        '--image', 'europe-west2-docker.pkg.dev/rugged-courier-444014-n0/howells-docker-repository/spring-boot-web',
+        '--platform', 'managed',
+        '--region', 'europe-west2',
+        '--allow-unauthenticated'
+      ]
 
 options:
   logging: "CLOUD_LOGGING_ONLY"
