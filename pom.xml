@@ -143,6 +143,9 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>3.4.0</version>
                 <configuration>
+                    <from>
+                        <image>eclipse-temurin:21-jdk</image>
+                    </from>
                     <to>
                         <image>europe-west2-docker.pkg.dev/rugged-courier-444014-n0/howells-docker-repository/spring-boot-web</image>
                     </to>
