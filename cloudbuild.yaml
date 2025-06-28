@@ -1,6 +1,6 @@
 steps:
   - id: 'Build app'
-    name: 'gcr.io/cloud-builders/mvn'
+    name: 'gcr.io/rugged-courier-444014-n0/maven-jdk21-builder'
     args: [ 'install', 'jib:build']
 
   - id: 'Run Checkstyle'
