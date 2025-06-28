@@ -1,10 +1,12 @@
 steps:
   - id: 'Build app'
     name: 'gcr.io/rugged-courier-444014-n0/maven-jdk21-builder'
+    entrypoint: 'mvn'
     args: [ 'install', 'jib:build']
 
   - id: 'Run Checkstyle'
     name: 'gcr.io/cloud-builders/mvn'
+    entrypoint: 'mvn'
     args: [ 'checkstyle:check']
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
